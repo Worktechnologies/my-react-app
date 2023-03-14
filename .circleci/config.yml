@@ -17,8 +17,8 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      -node/install-package:
-      pkg-manager:npm
+       - node/install-packages:
+          pkg-manager: npm
       -run:
       name: "install Dependecies"
       command: "npm install"
