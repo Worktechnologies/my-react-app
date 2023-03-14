@@ -28,6 +28,6 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-   build_test_deploy: # this can be any name you choose
+   build_and_test: # this can be any name you choose
     jobs:
       - build_and_test
