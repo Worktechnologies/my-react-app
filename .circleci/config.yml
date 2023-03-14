@@ -7,7 +7,7 @@ node: circleci/node@5.0.2
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-   build_and_test:
+   build-and-test:
    executor: node/default
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
@@ -28,6 +28,6 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-   build_and_test-workflow: # this can be any name you choose
+   build-and-test-workflow: # this can be any name you choose
     jobs:
-      - build_and_test
+      - build-and-test
