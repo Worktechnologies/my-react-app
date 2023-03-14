@@ -20,8 +20,8 @@ jobs:
       -node/install-package:
       pkg-manager:npm
       -run:
-      name:"install Dependecies"
-      command:"npm install"
+      name: "install Dependecies"
+      command: "npm install"
       - run:
           name: "Build"
           command: "npm run build"
