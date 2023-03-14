@@ -2,33 +2,33 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 orbs:
-node: circleci/node@5.0.2
+node:circleci/node@5.0.2
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  
-   build-and-test:
-   executor: node/default
+  my-react-app:
+  executor:node/default
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    
+    docker:
+      - image: cimg/base:stable
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-       - node/install-packages:
-          pkg-manager: npm
+      -node/install-package:
+      pkg-manager:npm
       -run:
-         name: install Dependecies
-         command: npm install
+      name:"install Dependecies"
+      command:"npm install"
       - run:
-          name: Build
-          command: npm run build
+          name: "Build"
+          command: "npm run build"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-   build-and-test-workflow: # this can be any name you choose
+  my-react-app-workflow:
     jobs:
-      - build-and-test
+      - say-hello
